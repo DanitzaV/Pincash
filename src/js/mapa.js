@@ -1,8 +1,9 @@
 // import data from './../data/cajerosApi.json';
 // var data = require('./../data/cajerosApi.json');
 
+var button = document.createElement('button');
 if (navigator.geolocation) {
-  document.getElementById('mapabtn').style.display = "none"
+  button.style.display = "none"
   document.getElementById('mapa').style.display = "none";
   navigator.geolocation.getCurrentPosition(function (position) {
     let pos = {
@@ -152,7 +153,6 @@ if (navigator.geolocation) {
  * @param   {H.service.Platform} platform    A stub class to access HERE services
  */
 
-
 function ruta(e) {
 
   console.log(e)
@@ -160,10 +160,11 @@ function ruta(e) {
   btn.addEventListener("click", () => {
     //  location = '../html/ruta.html';
     document.getElementById('map').style.display = "none";
-    document.getElementById('mapabtn').style.display = "block";
+    button.style.display = "block";
+
     document.getElementById('panel').style.display = "block";
     document.getElementById('mapa').style.display = "block"
-    document.getElementById('mapabtn').addEventListener('click', () => {
+    button.addEventListener('click', () => {
       location = './mapa.html'
 
     })
@@ -388,13 +389,18 @@ function ruta(e) {
             content = '';
           content += '<b>Total distance</b>: ' + summary.distance + 'm. <br/>';
           content += '<b>Travel Time</b>: ' + summary.travelTime.toMMSS() + ' (in current traffic)';
-
-
+          // content += '<button id="mapabtn">' + 'volver al mapa'+ '</button>'
           summaryDiv.style.fontSize = 'small';
           summaryDiv.style.marginLeft = '5%';
           summaryDiv.style.marginRight = '5%';
           summaryDiv.innerHTML = content;
           routeInstructionsContainer.appendChild(summaryDiv);
+          
+          button.id= 'mapabtn';
+          button.classList= 'btn';
+          button.innerHTML = 'volver al mapa';
+
+          routeInstructionsContainer.appendChild(button)
         }
 
         /**
@@ -432,8 +438,10 @@ function ruta(e) {
               nodeOL.appendChild(li);
             }
           }
-
+         
           routeInstructionsContainer.appendChild(nodeOL);
+         
+
         }
 
 
