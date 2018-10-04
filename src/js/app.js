@@ -62,7 +62,7 @@ displayLogin = () => {
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">Cerrar</button>
                         <button type="button" class="btn btn-enter" onclick="signUp()" data-dismiss="modal">Registrar</button>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ displayLogin = () => {
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-cancel" data-dismiss="modal">Cerrar</button>
                                 <button type="button" class="btn btn-enter" onclick="signIn()" data-dismiss="modal">Entrar</button>
                             </div>
                         </div>

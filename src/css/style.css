@@ -45,21 +45,21 @@
 }
 
 .titleLogin {
-    background: -webkit-linear-gradient(#00A9A9, #A7B19F);
+    background-color: #00A9A9;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 10px;
     font-family: 'Rhodium Libre', serif;
 }
 
-.p {
-    font-family: 'arial';
+.p,
+h5 {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .btn {
     border: 0 none;
     border-radius: 24px;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .regist {
@@ -69,14 +69,13 @@
 }
 
 .noAcc {
-    font-family: 'Open Sans', sans-serif;
     margin-bottom: 0%;
     margin-top: 1rem;
 }
 
 .mailLogin {
     width: 87%;
-    background-image: linear-gradient(#00A9A9, #A7B19F);
+    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
     color: white;
     padding: 1rem;
     font-size: 17px;
@@ -97,13 +96,18 @@
     margin-left: 1rem;
 }
 
-.btn-enter {
-    background-image: linear-gradient(#00A9A9, #A7B19F);
+.modal-header {
+    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
     color: white;
 }
 
-.modal-header {
-    background-image: linear-gradient(#00A9A9, #A7B19F);
+.btn-enter {
+    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #A7B19F;
     color: white;
 }
 
@@ -111,7 +115,7 @@
 /*Página*/
 
 .cash {
-    background-image: linear-gradient(#00A9A9, #A7B19F);
+    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
     color: white;
 }
 
@@ -131,6 +135,16 @@
 .btn-footer {
     background-color: #A7B19F;
     color: white;
+}
+
+.transition {
+    -webkit-animation: fadein 1s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 1s;
+    /* Internet Explorer */
+    animation: fadein 1s;
 }
 
 @keyframes fadein {
@@ -176,14 +190,4 @@
     to {
         opacity: 1;
     }
-}
-
-.transition {
-    -webkit-animation: fadein 1s;
-    /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 1s;
-    /* Firefox < 16 */
-    -ms-animation: fadein 1s;
-    /* Internet Explorer */
-    animation: fadein 1s;
 }
