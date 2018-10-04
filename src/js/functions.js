@@ -2,12 +2,10 @@
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         //Si nos logeamos, entramos al perfil del usuario
-        login.style.display = 'none';
-        start.style.display = 'block';
+        displayMap();
     } else {
         //Si no logeamos, nos mantenemos en la página de sign in o sign up
-        login.style.display = 'block';
-        start.style.display = 'none';
+        displayLogin();
     }
 });
 

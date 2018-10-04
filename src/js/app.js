@@ -3,13 +3,14 @@ setTimeout(function() {
     const courtainContainer = document.getElementById('courtainContainer');
     courtainContainer.style.visibility = 'hidden';
     courtainContainer.style.opacity = '0';
+
 }, 1000);
 
 // Diseño de la cortina
-courtainContainer.innerHTML =
-    `
+courtainContainer.innerHTML = `
+<div class="container-fluid">
 <div class="row">
-  <div class="col-12 text-center">
+    <div class="col-12 text-center">
     <img class="whiteLogo topRow animated bounceInDown text-center" src="./src/img/logoblanco.png" alt="Logo">
   </div>
 </div>
@@ -18,10 +19,13 @@ courtainContainer.innerHTML =
     <h1 class="titleWelcome animated bounceInUp text-center">PINCASH</h1>
   </div>
 </div>
+</div>
 `;
 
-// Página del login
-login.innerHTML = `
+// Página de la data
+displayLogin = () => {
+    data.innerHTML = `
+<div class="container-fluid" id="login">
 <div class="row">
   <div class="col-12 text-center">
     <img class="logocolor topRow" src="./src/img/logocolor.png" alt="Logo">
@@ -110,10 +114,13 @@ login.innerHTML = `
         </div>
     </div>
 </div>
+</div>
 `;
+};
 
-// Página mapa
-start.innerHTML = `
+displayMap = () => {
+    data.innerHTML = `
+<div class="container-fluid">
 <div class="row cash">
   <div class="col-2 p-0">
     <i class="fas fa-bell"></i>
@@ -132,4 +139,6 @@ start.innerHTML = `
     <button type="button" class="btn btn-footer p-4" onclick="logOut()">Salir</button>
   </div>
 </div>
+</div>
 `;
+};
