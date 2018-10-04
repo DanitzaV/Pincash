@@ -55,9 +55,7 @@ function signIn() {
 //Función para salir de la aplicación
 function logOut() {
     firebase.auth().signOut()
-        .then(() => {
-            alert('¡Adiós, nos vemos pronto!');
-        })
+        .then(() => {})
         .catch();
 }
 
