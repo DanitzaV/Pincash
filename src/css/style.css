@@ -1,5 +1,6 @@
 /* Sección de la cortina cuando se carga la página */
 
+
 *,
 *:after,
 *:before {
@@ -9,6 +10,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 
 #courtainContainer {
     margin: 0;
@@ -22,6 +24,7 @@
     transition: all 2s ease;
     z-index: 10000;
 }
+
 
 .whiteLogo {
     width: 9rem;
@@ -106,7 +109,9 @@
 }
 
 .modal-header {
+
     background-image: linear-gradient(#00A9A9, #00A9A9);
+
     color: white;
 }
 
@@ -118,12 +123,16 @@
     color: white;
 }
 
-.cash {
+
+.cash{
+
     background-image: linear-gradient(#00A9A9, #A7B19F);
     color: white;
 }
 
-.fa-sign-out-alt {
+
+.fa-sign-out-alt{
+
     margin-top: 30px;
     margin-left: 15px;
     width: 100%;
@@ -226,10 +235,12 @@
     color: #00A9A9;
 }
 
+
 #btnruta {
     background-image: linear-gradient(#00A9A9, #A7B19F);
     color: white;
 }
+
 
 #spane {
     font-size: 26px;
@@ -237,6 +248,7 @@
     color: white !important;
 }
 
-.spacio-row {
+.spacio-row{
+
     margin-bottom: 12px;
 }
