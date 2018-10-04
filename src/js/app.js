@@ -25,7 +25,7 @@ courtainContainer.innerHTML = `
 // Página de la data
 displayLogin = () => {
     data.innerHTML = `
-<div class="container-fluid" id="login">
+<div class="container-fluid transition">
 <div class="row">
   <div class="col-12 text-center">
     <img class="logocolor topRow" src="./src/img/logocolor.png" alt="Logo">
@@ -120,7 +120,7 @@ displayLogin = () => {
 
 displayMap = () => {
     data.innerHTML = `
-<div class="container-fluid">
+<div class="container-fluid transition">
 <div class="row cash">
   <div class="col-2 p-0">
     <i class="fas fa-bell"></i>
