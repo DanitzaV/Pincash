@@ -11,7 +11,7 @@ courtainContainer.innerHTML = `
 <div class="container-fluid">
 <div class="row">
     <div class="col-12 text-center">
-    <img class="whiteLogo topRow animated bounceInDown text-center" src="./src/img/logoblanco.png" alt="Logo">
+    <img class="whiteLogo animated bounceInDown text-center" src="./src/img/logoblanco.png" alt="Logo">
   </div>
 </div>
 <div class="row">
@@ -28,12 +28,12 @@ displayLogin = () => {
 <div class="container-fluid transition">
 <div class="row">
   <div class="col-12 text-center">
-    <img class="logocolor topRow" src="./src/img/logocolor.png" alt="Logo">
+    <img class="logocolor" src="./src/img/logocolor.png" alt="Logo">
   </div>
 </div>
 <div class="row">
   <div class="col-12 mt-3">
-    <h1 class="titleLogin text-center">PINCASH</h1>
+    <h1 class="titleLogin text-center mb-0">PINCASH</h1>
   </div>
 </div>
 <div class="row">
@@ -46,7 +46,7 @@ displayLogin = () => {
                     <div class="modal-header">
                         <h5 class="modal-title" id="signUpLabel">Ingresa tus datos</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true" id="closingX1">&times;</span>
                 </button>
                     </div>
                     <div class="modal-body">
@@ -59,6 +59,7 @@ displayLogin = () => {
                                 <label for="signUpPassword">Contraseña</label>
                                 <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
                             </div>
+                            <small class="form-text text-muted" id="conditions">Registrándote, automáticamente aceptas los <a onclick="termsAndConditions()">Términos y condiciones.</a></small>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -77,7 +78,7 @@ displayLogin = () => {
                             <div class="modal-header">
                                 <h5 class="modal-title" id="signInLabel">Ingresa tus datos</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                    <span aria-hidden="true" id="closingX2">&times;</span>
                                     </button>
                             </div>
                             <div class="modal-body">
@@ -139,6 +140,17 @@ displayMap = () => {
     <button type="button" class="btn btn-footer p-4" onclick="logOut()">Salir</button>
   </div>
 </div>
+</div>
+`;
+};
+
+termsAndConditions = () => {
+    data.innerHTML = `
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+        </div>
+    </div>
 </div>
 `;
 };
