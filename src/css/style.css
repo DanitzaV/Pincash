@@ -66,6 +66,11 @@ h5 {
     border-radius: 24px;
 }
 
+.btn-back {
+    background-color: white;
+    color: gray;
+}
+
 .regist {
     background-color: white;
     font-weight: bolder;
@@ -101,11 +106,11 @@ h5 {
 }
 
 .modal-header {
-    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
+    background-color: #00A9A9;
     color: white;
 }
 
-.modal-dialog {
+.entrada {
     top: calc(100% - 60%);
 }
 
@@ -152,6 +157,10 @@ h5 {
     bottom: 0;
 }
 
+.fa-camera {
+    width: 1rem;
+}
+
 .btn-footer {
     background-color: #A7B19F;
     color: white;
@@ -176,9 +185,6 @@ h5 {
     }
 }
 
-
-/* Firefox < 16 */
-
 @-moz-keyframes fadein {
     from {
         opacity: 0;
@@ -188,9 +194,6 @@ h5 {
     }
 }
 
-
-/* Safari, Chrome and Opera > 12.1 */
-
 @-webkit-keyframes fadein {
     from {
         opacity: 0;
@@ -199,9 +202,6 @@ h5 {
         opacity: 1;
     }
 }
-
-
-/* Internet Explorer */
 
 @-ms-keyframes fadein {
     from {
