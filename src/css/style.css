@@ -26,13 +26,13 @@
 .whiteLogo {
     width: 9rem;
     margin-top: 14rem;
+    margin-top: 1rem;
 }
 
 .titleWelcome {
     color: white;
     letter-spacing: 10px;
     font-family: 'Rhodium Libre', serif;
-    margin-top: 1rem;
 }
 
 
@@ -48,27 +48,21 @@
 }
 
 .titleLogin {
-    background-color: #00A9A9;
+    background: -webkit-linear-gradient(#00A9A9, #A7B19F);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 10px;
     font-family: 'Rhodium Libre', serif;
-    margin-top: 1rem;
 }
 
-.p,
-h5 {
-    font-family: 'Open Sans', sans-serif;
+.p {
+    font-family: 'arial';
 }
 
 .btn {
     border: 0 none;
     border-radius: 24px;
-}
-
-.btn-back {
-    background-color: white;
-    color: gray;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .regist {
@@ -78,13 +72,14 @@ h5 {
 }
 
 .noAcc {
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 0%;
     margin-top: 1rem;
 }
 
 .mailLogin {
     width: 87%;
-    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
+    background-image: linear-gradient(#00A9A9, #A7B19F);
     color: white;
     padding: 1rem;
     font-size: 17px;
@@ -105,46 +100,30 @@ h5 {
     margin-left: 1rem;
 }
 
-.modal-header {
-    background-color: #00A9A9;
-    color: white;
-}
-
-.entrada {
-    top: calc(100% - 60%);
-}
-
-#conditions {
-    font-family: 'Open Sans', sans-serif;
-}
-
-#closingX1 {
-    color: white;
-}
-
-#closingX2 {
-    color: white;
-}
-
 .btn-enter {
-    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
+    background-image: linear-gradient(#00A9A9, #A7B19F);
     color: white;
 }
 
-.btn-cancel {
-    background-color: #A7B19F;
+.modal-header {
+    background-image: linear-gradient(#00A9A9, #00A9A9);
     color: white;
 }
 
 
 /*Página*/
 
-.cash {
-    background-image: linear-gradient(to right, #00A9A9, #A7B19F);
+#mapabtn {
+    background-image: linear-gradient(#00A9A9, #A7B19F);
     color: white;
 }
 
-.fa-bell {
+.cash {
+    background-image: linear-gradient(#00A9A9, #A7B19F);
+    color: white;
+}
+
+.fa-sign-out-alt {
     margin-top: 30px;
     margin-left: 15px;
     width: 100%;
@@ -157,23 +136,9 @@ h5 {
     bottom: 0;
 }
 
-.fa-camera {
-    width: 1rem;
-}
-
 .btn-footer {
     background-color: #A7B19F;
     color: white;
-}
-
-.transition {
-    -webkit-animation: fadein 1s;
-    /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 1s;
-    /* Firefox < 16 */
-    -ms-animation: fadein 1s;
-    /* Internet Explorer */
-    animation: fadein 1s;
 }
 
 @keyframes fadein {
@@ -185,6 +150,9 @@ h5 {
     }
 }
 
+
+/* Firefox < 16 */
+
 @-moz-keyframes fadein {
     from {
         opacity: 0;
@@ -193,6 +161,9 @@ h5 {
         opacity: 1;
     }
 }
+
+
+/* Safari, Chrome and Opera > 12.1 */
 
 @-webkit-keyframes fadein {
     from {
@@ -203,6 +174,9 @@ h5 {
     }
 }
 
+
+/* Internet Explorer */
+
 @-ms-keyframes fadein {
     from {
         opacity: 0;
@@ -210,4 +184,59 @@ h5 {
     to {
         opacity: 1;
     }
+}
+
+#start {
+    -webkit-animation: fadein 1s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 1s;
+    /* Internet Explorer */
+    animation: fadein 1s;
+}
+
+#login {
+    -webkit-animation: fadein 1s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 1s;
+    /* Internet Explorer */
+    animation: fadein 1s;
+}
+
+.icon {
+    padding: 5px;
+    /* Footer */
+}
+
+.footer {
+    background-color: #F9F9F9;
+    height: 50px;
+}
+
+.btnFooter {
+    position: relative;
+    top: 70px;
+    background-color: white;
+}
+
+.fa-location-arrow {
+    color: #00A9A9;
+}
+
+#btnruta {
+    background-image: linear-gradient(#00A9A9, #A7B19F);
+    color: white;
+}
+
+#spane {
+    font-size: 26px;
+    padding: 0;
+    color: white !important;
+}
+
+.spacio-row {
+    margin-bottom: 12px;
 }

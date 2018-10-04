@@ -1,11 +1,14 @@
 //Función para reconocer si hay un usuario conectado e ingresar al perfil de éste
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        
         //Si nos logeamos, entramos al perfil del usuario
-        displayMap();
+        login.style.display = 'none';
+        start.style.display = 'block';
     } else {
         //Si no logeamos, nos mantenemos en la página de sign in o sign up
-        displayLogin();
+        login.style.display = 'block';
+        start.style.display = 'none';
     }
 });
 
@@ -16,6 +19,7 @@ function signUp() {
     firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
         .then(() => {
             alert('Usuario registrado con éxito.');
+            location = 'src/html/mapa.html'
         })
         .catch((error) => {
             if (error.code === 'auth/invalid-email') {
@@ -38,7 +42,9 @@ function signIn() {
     const emailValue = signInEmail.value;
     const passwordValue = signInPassword.value;
     firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
-        .then(() => {})
+        .then(() => {
+            location= 'src/html/mapa.html'
+        })
         .catch((error) => {
             if (error.code === 'auth/wrong-password') {
                 alert('La clave es incorrecta.')
@@ -55,7 +61,10 @@ function signIn() {
 //Función para salir de la aplicación
 function logOut() {
     firebase.auth().signOut()
-        .then(() => {})
+        .then(() => {
+            alert('¡Adiós, nos vemos pronto!');
+            location = '../../index.html'
+        })
         .catch();
 }
 
@@ -84,4 +93,8 @@ function loginGoogle() {
             console.log("Error de firebase > " + error.code);
             console.log("Error de firebase, mensaje > " + error.message);
         });
+}
+
+function refresh() {
+    location = './mapa.html';
 }
