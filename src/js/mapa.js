@@ -163,8 +163,7 @@ function ruta(e) {
     document.getElementById('mapabtn').style.display = "block";
     document.getElementById('panel').style.display = "block";
     document.getElementById('mapa').style.display = "block"
-    let btnmapa = document.getElementById('mapabtn');
-    btnmapa.addEventListener('click', () => {
+    document.getElementById('mapabtn').addEventListener('click', () => {
       location = './mapa.html'
 
     })
@@ -189,7 +188,8 @@ function ruta(e) {
               waypoint0: `${lat},${lng}`, // St Paul's Cathedral
               waypoint1: `${latpoint1},${lngpoint1}`,  // Tate Modern
               routeattributes: 'waypoints,summary,shape,legs',
-              maneuverattributes: 'direction,action'
+              maneuverattributes: 'direction,action',
+              language: 'es-es'
             };
 
 
@@ -428,7 +428,7 @@ function ruta(e) {
               spanInstruction.innerHTML = maneuver.instruction;
               li.appendChild(spanArrow);
               li.appendChild(spanInstruction);
-
+              
               nodeOL.appendChild(li);
             }
           }

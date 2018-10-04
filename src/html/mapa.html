@@ -13,8 +13,8 @@
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059" />
     <link rel="stylesheet" href="../css/ruta.css">
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -31,10 +31,32 @@
               <div class="row">
                 <div class="col-12">
                         <div id="map" style="width: 100%; height: 493px; background: grey" ></div>
-                        <button id="mapabtn">volver a mapa</button>
-                        <div id="mapa" style="position:absolute; width:49%; height:71vh; background:grey" ></div>
-                        <div id="panel" style="position:absolute; width:49%; left:51%; height:100%; background:inherit; display: none" ></div>
+                        
+                        <!-- <div id="mapa" style="position:absolute; width:49%; height:71vh; background:grey" ></div>
+                        <div id="panel" style="position:absolute; width:49%; left:51%; height:100%; background:inherit; display: none" ></div> -->
                 </div>
+                
+                </div>
+                <!-- style="height:176vh" -->
+                <div class="row " >
+                    <div class="col-md-6 col-sm-12 col-12">
+                        <div id="mapa" style=" height:71vh; background:grey" ></div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-12">
+                        <div id="panel" style="height:65vh; background:inherit; display: none" >
+                          
+                        </div>
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12 col-12">
+                              <div style="height: 25vh">
+                                  <button id="mapabtn">volver a mapa</button>
+                              </div>
+                                
+                            </div>
+                        </div>
+                        
+                      </div>
+                      
                
                
               </div>
@@ -44,7 +66,7 @@
                     </div>
             </div>
               <!-- <nav class="navbar fixed-bottom navbar-light bg-light"> -->
-                  <div class="text-center fixed-bottom">
+                  <div class="text-center fixed-bottom" style="height: 149px">
                       <button type="button" class="btnFooter rounded-circle shadow p-3 mb-5 bg-white rounded border border-white"><i
                           class="fas fa-sync-alt"></i></button>
                       <div class="footer">
@@ -63,9 +85,9 @@
               </div> -->
             </div>
    
-    <div id="myModal" class="modal">
+    <!-- <div id="myModal" class="modal">
 
-        <!-- Modal content -->
+         Modal content 
         <div class="modal-content">
           <span class="close" id="spane">&times;</span>
           <h1>Cajero </h1>
@@ -73,6 +95,49 @@
             <button id="btnruta">ruta</button>
         </div>
       
+      </div> -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header ">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Cajero Automatico</h5>
+              <button type="button" id="spane" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row spacio-row">
+                  <div class="col-2">
+                      <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="col-10">
+                      <p id="direccion"></p>
+                  </div>
+                </div>
+                <div class="row spacio-row">
+                  <div class="col-2"><i class="fas fa-clock"></i></div>
+                  <div class="col-10">L-V: 9:00 a 14:00</div>
+                </div>
+                <div class="row spacio-row">
+                    <div class="col-4">Tarjetas:</div>
+                    <div class="col-2">
+                      <i class="fab fa-cc-visa"></i> 
+                      <i class="fab fa-cc-mastercard"></i>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-2"><i class="fas fa-universal-access"></i></div>
+                      <div class="col-10">Si</div>
+                    </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnruta" class="btn btn-secondary" data-dismiss="modal">Ver trayecto</button>
+      
+            </div>
+          </div>
+        </div>
       </div>
  
   <!-- Modal -->
@@ -93,9 +158,9 @@
       </div>
       <div class="container text-center">
         <div class="row text-center">
-          <div class="col-sm col-md">
+          <div class="col- ">
           </div>
-          <div class="col-sm col-md">
+          <div class="col-">
             <video id="video"></video>
             
             <div class="row">
@@ -125,7 +190,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm col-md">
+    <div class="col-">
     </div>
     </div>
     </div>
