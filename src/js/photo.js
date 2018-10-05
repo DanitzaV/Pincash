@@ -12,7 +12,7 @@ document.getElementById('startbutton').addEventListener('click', () => {
       canvas = document.querySelector('#canvas'),
       photo = document.querySelector('#photo'),
       startbutton = document.querySelector('#startbutton'),
-      width = 320;
+      width = 270;
       height = 320;
   
     navigator.getMedia =

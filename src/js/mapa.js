@@ -3,7 +3,7 @@
 
 var button = document.createElement('button');
 if (navigator.geolocation) {
-  button.style.display = "none"
+  document.getElementById('mapabtn').style.display = "none"
   document.getElementById('mapa').style.display = "none";
   navigator.geolocation.getCurrentPosition(function (position) {
     let pos = {
@@ -170,11 +170,11 @@ function ruta(e) {
   btn.addEventListener("click", () => {
     //  location = '../html/ruta.html';
     document.getElementById('map').style.display = "none";
-    button.style.display = "block";
+    document.getElementById('mapabtn').style.display = "block";
 
     document.getElementById('panel').style.display = "block";
     document.getElementById('mapa').style.display = "block"
-    button.addEventListener('click', () => {
+    document.getElementById('mapabtn').addEventListener('click', () => {
       location = './mapa.html'
 
     })
@@ -406,12 +406,7 @@ function ruta(e) {
           summaryDiv.style.marginRight = '5%';
           summaryDiv.innerHTML = content;
           routeInstructionsContainer.appendChild(summaryDiv);
-          
-          button.id= 'mapabtn';
-          button.classList= 'btn';
-          button.innerHTML = 'volver al mapa';
 
-          routeInstructionsContainer.appendChild(button)
         }
 
         /**
@@ -469,11 +464,11 @@ function ruta(e) {
   let rutaServipag = document.getElementById('btnrutaServipag');
   rutaServipag.addEventListener("click", () => {
   document.getElementById('map').style.display = "none";
-  button.style.display = "block";
+  document.getElementById('mapabtn').style.display = "block";
 
   document.getElementById('panel').style.display = "block";
   document.getElementById('mapa').style.display = "block"
-  button.addEventListener('click', () => {
+  document.getElementById('mapabtn').addEventListener('click', () => {
     location = './mapa.html'
 
   })
@@ -706,11 +701,6 @@ function ruta(e) {
         summaryDiv.innerHTML = content;
         routeInstructionsContainer.appendChild(summaryDiv);
         
-        button.id= 'mapabtn';
-        button.classList= 'btn';
-        button.innerHTML = 'volver al mapa';
-
-        routeInstructionsContainer.appendChild(button)
       }
 
       /**
