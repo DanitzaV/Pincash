@@ -2,6 +2,7 @@ document.getElementById('startbutton').addEventListener('click', () => {
     document.getElementById('video').style.display = 'none';
     document.getElementById('canvas').style.display = 'block';
     document.getElementById('startbutton').style.display = 'none';
+    document.getElementById('btnenviar').style.display = 'block'
     
   });
   
