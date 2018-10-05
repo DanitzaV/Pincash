@@ -1,14 +1,16 @@
 //Función para reconocer si hay un usuario conectado e ingresar al perfil de éste
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        
+
         //Si nos logeamos, entramos al perfil del usuario
         login.style.display = 'none';
         start.style.display = 'block';
+        terms.style.display = 'none';
     } else {
         //Si no logeamos, nos mantenemos en la página de sign in o sign up
         login.style.display = 'block';
         start.style.display = 'none';
+        terms.style.display = 'none';
     }
 });
 
@@ -43,7 +45,7 @@ function signIn() {
     const passwordValue = signInPassword.value;
     firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
         .then(() => {
-            location= 'src/html/mapa.html'
+            location = 'src/html/mapa.html'
         })
         .catch((error) => {
             if (error.code === 'auth/wrong-password') {
@@ -62,7 +64,6 @@ function signIn() {
 function logOut() {
     firebase.auth().signOut()
         .then(() => {
-            alert('¡Adiós, nos vemos pronto!');
             location = '../../index.html'
         })
         .catch();

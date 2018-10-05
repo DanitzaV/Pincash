@@ -2,197 +2,231 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <!-- Boostrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <!-- Iconos -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059" />
-  <link rel="stylesheet" href="../css/ruta.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059" />
+    <link rel="stylesheet" href="../css/ruta.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row cash">
-      <div class="col-2 p-0">
-          <i class="fas fa-sign-out-alt" onclick="logOut()"></i>
-      </div>
-      <div class="col-8">
-        <p class="firstTitle p-4 m-0">LUGARES CON EFECTIVO</p>
-      </div>
-      <div class="col-2">
-        <button type="button"  style="height: 3em;padding: 13px 15px 13px 15px;z-index: 1;position: absolute;bottom: 31px;right:14px;margin-bottom: 0px;" class="rounded-circle shadow  bg-white rounded border border-white">
+    <div class="container-fluid transition">
+        <div class="row cash">
+            <div class="col-2 p-0">
+                <i class="fas fa-sign-out-alt" onclick="logOut()"></i>
+            </div>
+            <div class="col-8">
+                <p class="firstTitle p-4 m-0">LUGARES CON EFECTIVO</p>
+            </div>
+            <div class="col-2">
+                <button type="button" style="height: 3em;padding: 13px 15px 13px 15px;z-index: 1;position: absolute;bottom: 31px;right:14px;margin-bottom: 0px;" class="rounded-circle shadow  bg-white rounded border border-white" data-toggle="modal" data-target="#hateModal">
           <i class="fas fa-file-invoice showForm "></i>
         </button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div id="map" style="width: 100%; height: 493px; background: grey"></div>
-      </div>
-    </div>
-    <!-- style="height:176vh" -->
-    <div class="row ">
-      <div class="col-md-6 col-sm-12 col-12">
-        <div id="mapa" style=" height:71vh; background:grey"></div>
-      </div>
-      <div class="col-md-6 col-sm-12 col-12">
-        <div id="panel" style="height:100vh; background:inherit; display: none">
-  
+            </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- FOOTER -->
-    <nav style="height: 29px;" class="navbar fixed-bottom navbar-light bg-light mx-auto text-center justify-content-center">
-      <!-- <div class="mx-auto" > -->
-      <button type="button" onclick="refresh()" style="height: 3em;padding: 13px 15px 13px 15px;z-index: 1;position: absolute;bottom: 11px;margin-bottom: 0px;"
-        class="rounded-circle shadow  bg-white rounded border border-white">
+        <div class="row">
+            <div class="col-12">
+                <div id="map" style="width: 100%; height: 493px; background: grey"></div>
+            </div>
+        </div>
+        <!-- style="height:176vh" -->
+        <div class="row ">
+            <div class="col-md-6 col-sm-12 col-12">
+                <div id="mapa" style=" height:71vh; background:grey"></div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12">
+                <div id="panel" style="height:100vh; background:inherit; display: none">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <nav style="height: 29px;" class="navbar fixed-bottom navbar-light bg-light mx-auto text-center justify-content-center">
+            <!-- <div class="mx-auto" > -->
+            <button type="button" onclick="refresh()" style="height: 3em;padding: 13px 15px 13px 15px;z-index: 1;position: absolute;bottom: 11px;margin-bottom: 0px;" class="rounded-circle shadow  bg-white rounded border border-white">
         <i class="fas fa-sync-alt"></i>
       </button>
-      <!-- </div> -->
-    </nav>
-  
-  </div>
-  <div class="modal" id="myModal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header ">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Cajero Automatico</h5>
-          <button type="button" id="spane" class="close" data-dismiss="modal" aria-label="Close">
+            <!-- </div> -->
+        </nav>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Cajero Automatico</h5>
+                    <button type="button" id="spane" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row spacio-row">
-              <div class="col-2">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="col-10">
-                <p id="direccion"></p>
-              </div>
-            </div>
-            <div class="row spacio-row">
-              <div class="col-2"><i class="fas fa-clock"></i></div>
-              <div class="col-10">L-V: 9:00 a 14:00</div>
-            </div>
-            <div class="row spacio-row">
-              <div class="col-4">Tarjetas:</div>
-              <div class="col-2">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-2"><i class="fas fa-universal-access"></i></div>
-              <div class="col-10">Si</div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="btnruta" class="btn btn-secondary" data-dismiss="modal">Ver trayecto</button>
-  
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Modal Reclamo-->
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col col-lg-2">
-      </div>
-      <div class="col-md">
-  
-        <div class='slideUpForm' id="slideUp">
-          <span class='close'>X</span>
-  
-          <h6 class="prueba text-center">Ayudanos a mejorar la experiencia de este cajero</h6>
-          <div class="input-group mb-3">
-            <select class="custom-select">
-              <option selected>Reportar</option>
-              <option value="1">Fuera de Servicio</option>
-              <option value="2">Sin dinero</option>
-              <option value="3">Cajero cerrado</option>
-              <option value="4">No funciona el teclado</option>
-              <option value="5">No ingresa tarjeta</option>
-            </select>
-          </div>
-          <h6 class="text-center">Otro reporte:</h6>
-          <div class="input-group">
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-          </div>
-          <div class="container">
-            <div class="row">
-  
-              <div class="col-sm-12 mx-auto">
-                <video class="text-center" id="video"></video>
-                <a id="startbutton"><i class="fas fa-camera"></i></a>
-                <canvas id="canvas"></canvas>
-                <div>
-                  <button class="button button--success btnsu" data-for="js_success-popup">Enviar</button>
                 </div>
-              </div>
-  
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row spacio-row">
+                            <div class="col-2">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="col-10">
+                                <p id="direccion"></p>
+                            </div>
+                        </div>
+                        <div class="row spacio-row">
+                            <div class="col-2"><i class="fas fa-clock"></i></div>
+                            <div class="col-10">L-V: 9:00 a 14:00</div>
+                        </div>
+                        <div class="row spacio-row">
+                            <div class="col-4">Tarjetas:</div>
+                            <div class="col-2">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2"><i class="fas fa-universal-access"></i></div>
+                            <div class="col-10">Si</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnruta" class="btn btn-secondary" data-dismiss="modal">Ver trayecto</button>
+
+                </div>
             </div>
-          </div>
-  
         </div>
-  
-        <!-- popuo -->
-        <div class="popup popup--icon -success js_success-popup">
-          <div class="popup__background"></div>
-          <div class="popup__content">
-            <h3 class="popup__content__title">
-              Su reclamo ha sido enviado
-            </h3>
-            <p>Gracias a ti, podemos seguir mejorando!</p>
-            <button class="button button--success" data-for="js_success-popup" onclick="cerrar()">Cerrar</button>
-          </div>
-        </div>
-        <div class="col col-lg-2">
-        </div>
-      </div>
     </div>
-  </div>
-  <!--  -->
-  <!--Link de Firebase-->
-  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-  <script>
-    var config = {
-      apiKey: "AIzaSyB3CthvMNlvq5eb_JoKsil6RrZ82NXXEO4",
-      authDomain: "cashpot-68a8c.firebaseapp.com",
-      databaseURL: "https://cashpot-68a8c.firebaseio.com",
-      projectId: "cashpot-68a8c",
-      storageBucket: "cashpot-68a8c.appspot.com",
-      messagingSenderId: "632638463260"
-    };
-    firebase.initializeApp(config);
-    var database = firebase.database();
-  </script>
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-  <script src="./../js/mapa.js"></script>
-  <script src="../js/functions.js"></script>
-  <script src="./../js/photo.js"></script>
-  <script src="./../js/nav.js"></script>
+    <!-- modal servipag -->
+    <div class="modal" id="myModalServipag">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Sucursal Servipag</h5>
+                    <button type="button" id="spaneServipag" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row spacio-row">
+                            <div class="col-2">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="col-10">
+                                <p id="direccionServipag"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnrutaServipag" class="btn btn-secondary" data-dismiss="modal">Ver trayecto</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Reclamo-->
+    <div class="modal fade" id="hateModal" tabindex="-1" role="dialog" aria-labelledby="hateModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="hateModalLabel">Cajero</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h6 class="prueba text-center">Ayudanos a mejorar la experiencia de este cajero</h6>
+                                <select class="custom-select">
+                                  <option selected>Reportar</option>
+                                  <option value="1">Fuera de Servicio</option>
+                                  <option value="2">Sin dinero</option>
+                                  <option value="3">Cajero cerrado</option>
+                                  <option value="4">No funciona el teclado</option>
+                                  <option value="5">No ingresa tarjeta</option>
+                              </select>
+                                <h6 class="text-center">Otro reporte :</h6>
+                                <textarea class='message' placeholder='Tu reporte'></textarea>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col p-0">
+                                <video id="video"></video>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 offset-1">
+                                <div class="mx-auto">
+                                    <a id="startbutton"><i class="fas fa-camera fa-2x"></i></a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-12 col-12 p-0">
+                                <canvas id="canvas"></canvas>
+                            </div>
+                            <div class="col-12 offset-4">
+                                    <div class="mx-auto">
+                                            <button id="btnenviar" class="button button--success " style="display: none" data-for="js_success-popup">Enviar</button>
+                                    </div>
+                                    
+                                </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup popup--icon -success js_success-popup">
+                    <div class="popup__background"></div>
+                    <div class="popup__content">
+                        <h3 class="popup__content__title">
+                            Su reclamo ha sido enviado
+                        </h3>
+                        <p>Gracias a ti, podemos seguir mejorando!</p>
+                        <button class="button button--success" data-for="js_success-popup" onclick="cerrar()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <!--Link de Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyB3CthvMNlvq5eb_JoKsil6RrZ82NXXEO4",
+            authDomain: "cashpot-68a8c.firebaseapp.com",
+            databaseURL: "https://cashpot-68a8c.firebaseio.com",
+            projectId: "cashpot-68a8c",
+            storageBucket: "cashpot-68a8c.appspot.com",
+            messagingSenderId: "632638463260"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script src="./../js/mapa.js"></script>
+    <script src="../js/functions.js"></script>
+    <script src="./../js/photo.js"></script>
+    <script src="./../js/nav.js"></script>
 
 </body>
 
