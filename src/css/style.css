@@ -1,6 +1,5 @@
 /* Sección de la cortina cuando se carga la página */
 
-
 *,
 *:after,
 *:before {
@@ -10,7 +9,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 
 #courtainContainer {
     margin: 0;
@@ -24,7 +22,6 @@
     transition: all 2s ease;
     z-index: 10000;
 }
-
 
 .whiteLogo {
     width: 9rem;
@@ -109,10 +106,16 @@
 }
 
 .modal-header {
-
     background-image: linear-gradient(#00A9A9, #00A9A9);
-
     color: white;
+}
+
+.intro {
+    top: calc(100% - 60%);
+}
+
+#terms {
+    display: none;
 }
 
 
@@ -123,16 +126,12 @@
     color: white;
 }
 
-
-.cash{
-
+.cash {
     background-image: linear-gradient(#00A9A9, #A7B19F);
     color: white;
 }
 
-
-.fa-sign-out-alt{
-
+.fa-sign-out-alt {
     margin-top: 30px;
     margin-left: 15px;
     width: 100%;
@@ -143,6 +142,11 @@
     background-color: #A7B19F;
     position: absolute;
     bottom: 0;
+}
+
+.btn-back {
+    background-color: white;
+    color: #A7B19F;
 }
 
 .btn-footer {
@@ -195,17 +199,7 @@
     }
 }
 
-#start {
-    -webkit-animation: fadein 1s;
-    /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 1s;
-    /* Firefox < 16 */
-    -ms-animation: fadein 1s;
-    /* Internet Explorer */
-    animation: fadein 1s;
-}
-
-#login {
+.transition {
     -webkit-animation: fadein 1s;
     /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 1s;
@@ -235,12 +229,10 @@
     color: #00A9A9;
 }
 
-
 #btnruta {
     background-image: linear-gradient(#00A9A9, #A7B19F);
     color: white;
 }
-
 
 #spane {
     font-size: 26px;
@@ -248,7 +240,6 @@
     color: white !important;
 }
 
-.spacio-row{
-
+.spacio-row {
     margin-bottom: 12px;
 }
